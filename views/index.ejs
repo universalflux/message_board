@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<div id = "container">
+<div class="jumbotron" id = "header">
+<h1> Message Board </h1>
+</div>
+<div id = "">
+<form class="messages" method="POST" action="/messages">
+	<label> Name: <br/>
+	<input type="text" name="name"> <br/>
+	</label>
+	<label> Message: </br>
+	<textarea name="message"></textarea></br>
+	</label>
+	<button class= "btn btn-primary" type="submit"> Post Message :) </button>
+</form>
+</div>
+<div id = "comment_box" class="">
+<% for (var x in users) { %>
+<h1 class="message_text"><span class="message_title"> Name: </span><%= users[x].name %></h1>
+<p class="message_text"> <span class="message_title">Message:</span> <%= users[x].message %></p>
+<% for (var y in users[x].comments) { %>
+<p class="comment_text"><span class="comment_title"> name: </span> <%= users[x].comments[y].name %> </p>
+<p class="comment_text"><span class="comment_title"> comment: </span> <%= users[x].comments[y].comment %> </p>
+<% } %>
+<div class="comment-container">
+<form class="comments" method="POST" action="/comments">
+<input type="hidden" name="_id" value="<%= users[x]._id %>">
+<label>
+Name: <input name="name"> <br/>
+</label>
+<label>
+Comment: <textarea name="comment"></textarea><br/>
+</label>
+<button class="btn"> Post Comment :) </button>
+</form>
+<% } %><br/>
+</div>
+<div>
+</body>
+</html>

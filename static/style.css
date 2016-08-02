@@ -1,0 +1,84 @@
+#header {
+	margin: 0 auto 0 auto;
+	text-align: center;
+	background-color: white;
+}
+
+#header h1 {
+	color: black;
+}
+
+#container {
+	margin: 0 auto 0 auto;
+	width: 700px;
+}
+
+.message_text {
+	color: black;
+	font-size: 30px;
+
+}
+
+.message_title {
+	font-weight: bolder;
+
+}
+
+.comment_text {
+
+}
+
+.comment_title {
+	margin-left: 10px;
+	font-weight: bold;
+}
+
+#comment_box {
+	height: 600px;
+	width: 800px;
+	margin: 0 auto 0 auto;
+	overflow: scroll;
+}
+
+#message_box{
+	width: 400px;
+	height: 300px;
+}
+
+.messages textarea {
+	width: 700px;
+	height: 100px;
+}
+
+.messages label {
+	font-weight: bold;
+}
+
+.messages input {
+	width: 300px;
+	height: 20px;
+}
+
+.comments textarea {
+	height: 75px;
+}
+.comments label {
+	display:block;
+	margin-top: 10px;
+}
+.comments input {
+	margin-bottom: 2px;
+}
+.comments input, textarea {
+	float:right;
+}
+.comments button {
+	margin-top: 30px;
+	height: 30px;
+	width: 125px;
+	/*float: left;*/
+}
+
+.comment-container {
+	width: 400px;
+}
